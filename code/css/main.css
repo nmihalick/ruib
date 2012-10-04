@@ -1,0 +1,9 @@
+body {
+    font: normal 100% Helvetica, Arial, sans-serif;
+}
+
+
+.column {
+    float: left;
+    width: 12.551%;          /* 124px / 988px = 0.12551 */
+}

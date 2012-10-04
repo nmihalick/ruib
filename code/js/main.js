@@ -1,0 +1,6 @@
+/**
+ * GLOBALS
+ */
+var app = {};
+
+

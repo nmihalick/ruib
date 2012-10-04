@@ -1,0 +1,56 @@
+body {
+    font: normal 100% Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 1.5em;        /* 24px / 16px = 1.5em */
+    margin-left: 14.575%;    /* 144px / 988px = 0.14575 */
+    width: 70.85%;           /* 700px / 988px = 0.7085 */
+}
+
+ul {
+    font-size: 0.875em;      /* 14px / 16px = 0.875em */
+}
+
+#page {
+    margin: 40px auto;
+    padding: 0 1em;
+    max-width: 61.75em;      /* 988px / 16px = 61.75em */
+}
+
+.entry h2,
+.entry .content {
+    float: right;
+    width: 85.425%;          /* 844px / 988px = 0.85425 */
+}
+
+.entry .info {
+    float: left;
+    width: 12.551%;          /* 124px / 988px = 0.12551 */
+}
+
+.entry .main {
+    float: left;
+    width: 82.938%;          /* 700px / 844px = 0.82938 */
+}
+
+.entry .meta {
+    float: right;
+    width: 14.692%;          /* 124px / 844px = 0.14692 */
+}
+
+@media screen and (max-width: 700px) {
+    .entry .info {
+	display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .entry .main,
+    .entry .meta {
+	float: none;
+    }
+}
+
+
