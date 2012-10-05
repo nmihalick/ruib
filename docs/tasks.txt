@@ -2,7 +2,6 @@
 
 = in progress =
 
-get a solid responsive grid
 
 = secondary =
 
