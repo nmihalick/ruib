@@ -1,0 +1,13 @@
+# tracking current and upcoming tasks to focus on.
+
+= in progress =
+
+get a solid responsive grid
+
+= secondary =
+
+document all of the skeleton classes that are built in
+
+= todo =
+
+prototype a ui for attaching things to the grid.
