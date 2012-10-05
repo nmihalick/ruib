@@ -1,0 +1,23 @@
+# skeleton supports a 12 column layout
+
+# columns sizes
+one, two, three, four, five, six, seven, eight, nine, ten, eleven
+
+#sidebars
+[size] columns sidebar
+
+#content
+[size] columns content
+
+#offset
+[size] columns offset-by-[size]
+
+# put columns side by side, alpha is first, omega is last, don't put a class
+# inbetween
+[size] columns alpha, [size] colums omega
+
+# thirds
+one-third column, two-third column
+
+#rows
+row
