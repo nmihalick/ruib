@@ -1,0 +1,15 @@
+
+
+reality:
+
+# 
+
+stories:
+
+- 
+
+q&a:
+
+q:
+a:
+
