@@ -1,0 +1,14 @@
+epic-start-design
+
+current story:
+
+next story:
+
+tasks:
+
+- start breaking out stories
+- verify the reality map
+- get questions answered
+- finish the stories
+- setup the start page
+- prompt 
