@@ -1,0 +1,27 @@
+as a user, i want to start a new design on a responsive grid.
+
+reality:
+# start a new design 
+# select grid size
+# edit gutter size
+# edit other design attributes
+# save design
+
+stories:
+
+- as a user, i want to start a new design
+- as a user, i want to select my grid size
+- as a user, i want to choose my gutter size
+- as a user, i want to save a design locally
+- as a user, i want to save a design on your server
+
+q&a:
+
+q: what design attributes should be available to edit at this stage?
+a: 
+
+q: how many grid sizes should be available?
+a: 
+
+q: is there anything else that should be available at the start?
+a: 
