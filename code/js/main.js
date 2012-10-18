@@ -28,9 +28,33 @@ app.model.the_design.draw = function() {
 app.control.start_design = function() {
     $('#start_new_design').fadeOut('slow');
     $('#start_new_design').remove();
+    app.control.set_hash(app.control.generate_hash());
     app.model.the_design.draw();
+};
+app.control.has_hash = function() {
+    if (app.control.get_hash() === '') {
+	return false;
+    }
+    return true;
+};
+app.control.get_hash = function() {
+    return window.location.hash.substring(1);
+};
+app.control.clear_hash = function() {
+    window.location.hash = '';
+};
+app.control.set_hash = function(hash) {
+    window.location.hash = hash;
+};
+app.control.generate_hash = function() {
+    return '12345';
 };
 
 $(document).ready(function() {
-    app.model.start_new_design.draw();
+    if (app.control.has_hash()) {
+	return;
+    }
+    else {
+	app.model.start_new_design.draw();
+    }
 });
