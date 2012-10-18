@@ -2,9 +2,8 @@ as a user, i want to start a new design on a responsive grid.
 
 reality:
 # start a new design 
-# select grid size
-# edit gutter size
-# edit other design attributes
+# edit design attributes
+# show initial design
 # save design
 
 stories:
