@@ -17,5 +17,8 @@ tasks:
 + figure out how to determine if a design is started
 + set something to identify the design as started
 + create a design example object
-- load the design example to start with when prompt is hit
-- show the UI
+- finish adding all of the children content to the example design
+- finish adding the nav to the example design
+- finish adding the sidebar to the example design
++ load the design example to start with when prompt is hit
+- build the design tree to show the example UI

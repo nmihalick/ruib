@@ -25,11 +25,17 @@ app.model.the_design.draw = function() {
     $('#content').html(app.model.the_design.templ);
 };
 
+/** CONTROLS **/
 app.control.start_design = function() {
     $('#start_new_design').fadeOut('slow');
     $('#start_new_design').remove();
     app.control.set_hash(app.control.generate_hash());
+    app.control.load_example_object();
     app.model.the_design.draw();
+};
+app.control.load_example_object = function() {
+    app.current_design = start_design;
+    console.log(app.current_design);
 };
 app.control.has_hash = function() {
     if (app.control.get_hash() === '') {
