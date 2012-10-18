@@ -11,5 +11,5 @@ tasks:
 - verify the reality map
 - get questions answered
 - finish the stories
-- setup the start page
-- prompt 
++ setup the start page
+- prompt to start a new page
