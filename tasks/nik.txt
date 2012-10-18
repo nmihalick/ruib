@@ -14,6 +14,8 @@ tasks:
 + setup the start page
 + get responsive bootstrap
 + prompt if they would like to start a new design
-- create an design to start with when prompt is hit
++ hide the prompt when the start button is clicked
+- create a design to start with when prompt is hit
 - figure out how to determine if a design is started
+- set something to identify the design as started
 - the UI should show the base templates
