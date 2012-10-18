@@ -16,5 +16,6 @@ tasks:
 + hide the prompt when the start button is clicked
 + figure out how to determine if a design is started
 + set something to identify the design as started
-- create a design to start with when prompt is hit
-- the UI should show the base template as the created element
++ create a design example object
+- load the design example to start with when prompt is hit
+- show the UI
