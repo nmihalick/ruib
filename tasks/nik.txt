@@ -12,4 +12,8 @@ tasks:
 - get questions answered
 - finish the stories
 + setup the start page
-- prompt to start a new page
++ get responsive bootstrap
+- prompt if they would like to start a new design
+- create an design to start with when prompt is hit
+- figure out how to determine if a design is started
+- the UI should show the base templates
