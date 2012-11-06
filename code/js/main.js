@@ -2,27 +2,35 @@
  * GLOBALS
  */
 var app = {};
-app.model = {};
+app.view = {};
 app.control = {};
 
-app.model.start_new_design = {};
-app.model.start_new_design.templ = '<div class="hero-unit" id="start_new_design">';
-app.model.start_new_design.templ += '<h1>hi!</h1>';
-app.model.start_new_design.templ += '<p>would you like to build a responsive design?</p>';
-app.model.start_new_design.templ += '<a class="btn btn-primary btn-large">YES</a>';
-app.model.start_new_design.templ += '</div>';
-app.model.start_new_design.draw = function() {
-    $('#content').html(app.model.start_new_design.templ);
+/** VIEWS **/
+app.view.start_new_design = {};
+app.view.start_new_design.templ = '<div class="hero-unit" id="start_new_design">';
+app.view.start_new_design.templ += '<h1>hi!</h1>';
+app.view.start_new_design.templ += '<p>would you like to build a responsive design?</p>';
+app.view.start_new_design.templ += '<a class="btn btn-primary btn-large">YES</a>';
+app.view.start_new_design.templ += '</div>';
+app.view.start_new_design.draw = function() {
+    $('#content').html(app.view.start_new_design.templ);
     $('#start_new_design > .btn').on('click', function() {
 	app.control.start_design();
     });
 };
 
-app.model.the_design = {};
-app.model.the_design.templ = '<div id="the_design"></div>';
-app.model.the_design.templ += '';
-app.model.the_design.draw = function() {
-    $('#content').html(app.model.the_design.templ);
+app.view.the_design = {};
+app.view.the_design.templ = '';
+app.view.the_design.draw = function() {
+    app.control.load_example_object();
+    app.view.the_design.templ += '<div class="span4"><ul class="unstyled">';
+    for (var i = 0; i < app.current_design.children.length; i++) {
+	app.view.the_design.templ += '<li><a class="btn">';
+	app.view.the_design.templ += app.current_design.children[i].id;
+	app.view.the_design.templ += '</a></li>';
+    }
+    app.view.the_design.templ += '</ul></div>';
+    $('#content').html(app.view.the_design.templ);
 };
 
 /** CONTROLS **/
@@ -30,8 +38,7 @@ app.control.start_design = function() {
     $('#start_new_design').fadeOut('slow');
     $('#start_new_design').remove();
     app.control.set_hash(app.control.generate_hash());
-    app.control.load_example_object();
-    app.model.the_design.draw();
+    app.view.the_design.draw();
 };
 app.control.load_example_object = function() {
     app.current_design = start_design;
@@ -58,9 +65,9 @@ app.control.generate_hash = function() {
 
 $(document).ready(function() {
     if (app.control.has_hash()) {
-	return;
+	app.view.the_design.draw();
     }
     else {
-	app.model.start_new_design.draw();
+	app.view.start_new_design.draw();
     }
 });

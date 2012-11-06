@@ -2,9 +2,11 @@ var start_design = {};
 start_design.children = [];
 
 start_design.nav = {};
+start_design.nav.id = 'nav';
 start_design.nav.templ = '<div class="navbar navbar-inverse navbar-fixed-top">{{children}}</div>';
 
 start_design.container = {};
+start_design.container.id = 'container';
 start_design.container.templ = '<div class="container-fluid">{{children}}</div>';
 start_design.container.children = [];
 

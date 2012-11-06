@@ -6,4 +6,6 @@ body {
 .column {
     float: left;
     width: 12.551%;          /* 124px / 988px = 0.12551 */
+    border: 1px solid black;
+    height: 100%;
 }
