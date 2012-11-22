@@ -2,6 +2,10 @@
  * GLOBALS
  */
 var app = {};
+
+/**
+ * READY
+ */
 $(document).ready(function() {
     $("#ruib-edit").on("click", function(e) {
 	$("*").on("click", function(e) {
