@@ -2,6 +2,33 @@
  * GLOBALS
  */
 var app = {};
+var ruib = {};
+
+/**
+ * element selector
+ *
+ * the element selector is used to select elements on the page. it needs a
+ * selectable area, an exclusion area, and a callback for once the element is
+ * selected.
+ *
+ * example:
+ *  var callback = function(e) { alert("test"); };
+ *  var config = { selector: "*", callback: callback };
+ *  var es = ruib.element_selector(config);
+ *  es.on();
+ */
+ruib.element_selector = function(my) {
+    var that = {};
+
+    that.on = function() {
+	$(my.selector).on("click", my.callback);
+    };
+    that.off = function() {
+	$(my.selector).off("click");
+    };
+
+    return that;
+};
 
 /**
  * READY
