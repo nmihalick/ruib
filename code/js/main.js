@@ -4,6 +4,33 @@
 var app = {};
 
 /**
+ * toolbar
+ *
+ * the toolbar draws a floating toolbar that can be dragged around the screen.
+ * it can take some styling information, some interaction information, and then
+ * the widgets to display. the widgets are an object in the form:
+ *
+ * { name: "action name", icon: "image.gif", action: function(e) { ... } }
+ */
+ruib.toolbar = function(my) {
+    var that = {};
+
+    that.draw = function() {
+	var nav = document.createElement("nav");
+	$(nav).attr('id', 'ruib-toolbar');
+	$(nav).draggable();
+	$("body").append(nav);
+	var nav_ul = document.createElement("ul");
+	$(nav).append(nav_ul);
+	var nav_li = document.createElement("li");
+	$(nav_li).html("test li");
+	$(nav_ul).append(nav_li);
+    };
+
+    return that;
+};
+
+/**
  * READY
  */
 $(document).ready(function() {
