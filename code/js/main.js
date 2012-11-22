@@ -2,72 +2,39 @@
  * GLOBALS
  */
 var app = {};
-app.view = {};
-app.control = {};
-
-/** VIEWS **/
-app.view.start_new_design = {};
-app.view.start_new_design.templ = '<div class="hero-unit" id="start_new_design">';
-app.view.start_new_design.templ += '<h1>hi!</h1>';
-app.view.start_new_design.templ += '<p>would you like to build a responsive design?</p>';
-app.view.start_new_design.templ += '<a class="btn btn-primary btn-large">YES</a>';
-app.view.start_new_design.templ += '</div>';
-app.view.start_new_design.draw = function() {
-    $('#content').html(app.view.start_new_design.templ);
-    $('#start_new_design > .btn').on('click', function() {
-	app.control.start_design();
-    });
-};
-
-app.view.the_design = {};
-app.view.the_design.templ = '';
-app.view.the_design.draw = function() {
-    app.control.load_example_object();
-    app.view.the_design.templ += '<div class="span4"><ul class="unstyled">';
-    for (var i = 0; i < app.current_design.children.length; i++) {
-	app.view.the_design.templ += '<li><a class="btn">';
-	app.view.the_design.templ += app.current_design.children[i].id;
-	app.view.the_design.templ += '</a></li>';
-    }
-    app.view.the_design.templ += '</ul></div>';
-    $('#content').html(app.view.the_design.templ);
-};
-
-/** CONTROLS **/
-app.control.start_design = function() {
-    $('#start_new_design').fadeOut('slow');
-    $('#start_new_design').remove();
-    app.control.set_hash(app.control.generate_hash());
-    app.view.the_design.draw();
-};
-app.control.load_example_object = function() {
-    app.current_design = start_design;
-    console.log(app.current_design);
-};
-app.control.has_hash = function() {
-    if (app.control.get_hash() === '') {
-	return false;
-    }
-    return true;
-};
-app.control.get_hash = function() {
-    return window.location.hash.substring(1);
-};
-app.control.clear_hash = function() {
-    window.location.hash = '';
-};
-app.control.set_hash = function(hash) {
-    window.location.hash = hash;
-};
-app.control.generate_hash = function() {
-    return '12345';
-};
-
 $(document).ready(function() {
-    if (app.control.has_hash()) {
-	app.view.the_design.draw();
-    }
-    else {
-	app.view.start_new_design.draw();
-    }
+    $("#ruib-edit").on("click", function(e) {
+	$("*").on("click", function(e) {
+	    var editModal = document.createElement('div');
+	    $(editModal).addClass("modal hide");
+	    $(editModal).attr('id', 'editModal');
+	    $(editModal).modal({show: true, backdrop: false});
+
+	    var editModal_header = document.createElement('div');
+	    $(editModal_header).addClass('modal-header');
+	    $(editModal_header).appendTo(editModal);
+	    var editModal_closeButton = document.createElement('button');
+	    $(editModal_closeButton).addClass('close');
+	    $(editModal_closeButton).attr('type', 'button');
+	    $(editModal_closeButton).attr('aria-hidden', 'true');
+	    $(editModal_closeButton).data('dismiss', 'modal');
+	    $(editModal_closeButton).val("x");
+	    $(editModal_closeButton).html("x");
+	    $(editModal_closeButton).appendTo(editModal_header);
+	    var editModal_headerTitle = document.createElement('h3');
+	    $(editModal_headerTitle).html("element editor");
+	    $(editModal_headerTitle).appendTo(editModal_header);
+
+	    var editModal_body = document.createElement('div');
+	    $(editModal_body).addClass('modal-body');
+	    $(editModal_body).html(e.currentTarget);
+	    $(editModal_body).appendTo(editModal);
+
+	    var editModal_footer = document.createElement('div');
+	    $(editModal_footer).addClass('modal-footer');
+	    $(editModal_footer).appendTo(editModal);
+	    return false;
+	});
+	return false;
+    });
 });
