@@ -2,7 +2,7 @@ body {
     font: normal 100% Helvetica, Arial, sans-serif;
 }
 
-#ruib-edit {
+#ruib-toolbar-hidden {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -10,13 +10,14 @@ body {
 
 #ruib-toolbar {
     position: absolute;
-    left: 10px;
-    top: 10px;
     border: 1px solid black;
-    background-color: grey;
-    width: 100px;
+    background-color: white;
 }
 
-#ruib-toolbar ul {
-    list-style-type: none;
+#ruib-toolbar h1 {
+    cursor: move;
+    size: 1.2em;
+    padding: 0px;
+    margin: 0px;
+    background-color: grey;
 }
