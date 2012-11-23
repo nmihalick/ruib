@@ -17,7 +17,6 @@
  */
 var ruib = (ruib === undefined) ? {} : ruib;
 
-
 ruib.element_selector = function(my) {
     var that = {};
 
