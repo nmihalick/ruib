@@ -1,0 +1,14 @@
+element selector
+  it needs an option to identify the selectable area, and exclusion area, and a callback. the callback gets the selected element. this should be registered as an action. 
+
+toolbar
+  draw a toolbar widget on the screen. it gets styling information, interaction information, and the widgets. the widgets include name, icon, and resulting action. 
+
+element inserter
+  shows you the list of available widgets. takes a parent to append to. inserts the selected element as a widget. 
+  
+element editor
+  lets you view details of a widget and make changes.
+
+CSS editor
+  allows you to create CSS styles and insert them into the page. 
