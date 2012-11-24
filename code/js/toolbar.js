@@ -40,10 +40,9 @@ ruib.toolbar = function(my) {
 	};
 	my.widgets.push(hide_toolbar_widget);
     };
+    that.set_defaults();
 
     that.draw = function() {
-	that.set_defaults();
-
 	var nav = document.createElement("nav");
 	$(nav).attr('id', 'ruib-toolbar');
 	$(nav).css("top", my.position.y);
