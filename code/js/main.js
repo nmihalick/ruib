@@ -7,38 +7,31 @@ var app = {};
  * READY
  */
 $(document).ready(function() {
-    $("#ruib-edit").on("click", function(e) {
-	$("*").on("click", function(e) {
-	    var editModal = document.createElement('div');
-	    $(editModal).addClass("modal hide");
-	    $(editModal).attr('id', 'editModal');
-	    $(editModal).modal({show: true, backdrop: false});
+    var es_config = { start_element: "body" };
+    var es = ruib.element_selector(es_config);
+    var ei_config = {};
+    ei_config.element_list = [{ id: "div", name: "div", markup: "<div> </div>"}];
+    var ei = ruib.element_inserter(ei_config);
 
-	    var editModal_header = document.createElement('div');
-	    $(editModal_header).addClass('modal-header');
-	    $(editModal_header).appendTo(editModal);
-	    var editModal_closeButton = document.createElement('button');
-	    $(editModal_closeButton).addClass('close');
-	    $(editModal_closeButton).attr('type', 'button');
-	    $(editModal_closeButton).attr('aria-hidden', 'true');
-	    $(editModal_closeButton).data('dismiss', 'modal');
-	    $(editModal_closeButton).val("x");
-	    $(editModal_closeButton).html("x");
-	    $(editModal_closeButton).appendTo(editModal_header);
-	    var editModal_headerTitle = document.createElement('h3');
-	    $(editModal_headerTitle).html("element editor");
-	    $(editModal_headerTitle).appendTo(editModal_header);
-
-	    var editModal_body = document.createElement('div');
-	    $(editModal_body).addClass('modal-body');
-	    $(editModal_body).html(e.currentTarget);
-	    $(editModal_body).appendTo(editModal);
-
-	    var editModal_footer = document.createElement('div');
-	    $(editModal_footer).addClass('modal-footer');
-	    $(editModal_footer).appendTo(editModal);
+    var toolbar_config = {};
+    toolbar_config.position = { x: "100px", y: "100px" };
+    toolbar_config.widgets = [];
+    var alert_widget = { name: "alert" };
+    alert_widget.action = function(e) { alert("test"); };
+    toolbar_config.widgets.push(alert_widget);
+    var insert_widget = { name: "insert element" };
+    insert_widget.action = function(e) {
+	var callback = function(e) {
+	    console.log(e.currentTarget);
+	    ei.set_parent_element(e.currentTarget);
+	    ei.draw();
+	    es.off();
 	    return false;
-	});
+	};
+	es.set_callback(callback);
+	es.on();
 	return false;
-    });
+    };
+    toolbar_config.widgets.push(insert_widget);
+    ruib.toolbar(toolbar_config).draw();
 });
