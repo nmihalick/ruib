@@ -29,6 +29,9 @@ ruib.element_inserter = function(my) {
     };
     that.set_defaults();
 
+    that.set_parent_element = function(new_parent_element) {
+	my.parent_element = new_parent_element;
+    };
     that.insert = function(element_markup) {
 	$(my.parent_element).append(element_markup);
     };
