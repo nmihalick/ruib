@@ -20,6 +20,12 @@ var ruib = (ruib === undefined) ? {} : ruib;
 ruib.element_selector = function(my) {
     var that = {};
 
+    that.set_start_element = function(new_start_element) {
+	my.start_element = new_start_element;
+    };
+    that.set_callback = function(new_callback) {
+	my.callback = new_callback;
+    };
     that.on = function() {
 	$(my.start_element).on("click", "*", my.callback);
     };
