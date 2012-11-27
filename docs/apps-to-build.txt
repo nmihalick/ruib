@@ -6,9 +6,31 @@ toolbar
 
 element inserter
   shows you the list of available widgets. takes a parent to append to. inserts the selected element as a widget. 
+
+element to HTML
+  converts an element to HTML. I would settle for something that converts its children.
   
+element attribute parser
+  gets the attributes and classes on a div. 
+
+element style editor
+  gets the style attributes set on the element. 
+
 element editor
   lets you view details of a widget and make changes.
 
 CSS editor
   allows you to create CSS styles and insert them into the page. 
+
+content creator
+  create and store non-HTML content
+
+content tie in
+  link content to the created designs. 
+
+property editor
+  sets an gets local properties set by the user.
+
+local storage
+  store the created pages locally.
+
